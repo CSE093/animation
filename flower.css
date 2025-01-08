@@ -1,0 +1,206 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg,skyblue, red 30%, darkblue 90%, purple 60%, skyblue);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: gold;
+    font-family: Arial, sans-serif;
+    border: 10px solid black;
+    border-radius: 40px;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+.emoji {
+    position: absolute;
+    bottom: 80px;
+    left: -200px;
+    width: 150px;
+    height: 150px;
+    background: yellow;
+    border-radius: 50%;
+    border: 5px solid gold;
+    animation: run 5s linear infinite, bounce 0.3s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 0 20px 5px #f5a623, 0 0 50px 10px #f39c12;
+}
+
+
+.eyes {
+    position: relative;
+    top: -15px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.eye {
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px 2px #fff;
+}
+
+.iris {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    animation: eyeGlow 2s infinite;
+}
+
+
+.mouth {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    animation: mouthSmile 2s infinite alternate;
+}
+
+
+.legs {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 20px;
+}
+
+.leg {
+    width: 15px;
+    height: 40px;
+    background: yellow;
+    border: 2px solid gold;
+    border-radius: 10px;
+    animation: legMovement 0.5s infinite alternate;
+    box-shadow: 0 0 15px 3px gold;
+}
+
+.left-leg {
+    animation-delay: 0s;
+}
+
+.right-leg {
+    animation-delay: 0.25s;
+}
+
+
+@keyframes run {
+    0% {
+        left: -200px;
+    }
+    50% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    100% {
+        left: 100vw;
+    }
+}
+
+@keyframes legMovement {
+    0% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes eyeGlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes mouthSmile {
+    0% {
+        width: 70px;
+        height: 15px;
+        border-radius: 50%;
+    }
+    50% {
+        width: 80px;
+        height: 20px;
+        border-radius: 25%;
+    }
+    100% {
+        width: 70px;
+        height: 15px;
+        border-radius: 50%;
+    }
+}
+
+@keyframes handSwing {
+    0% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(15deg);
+    }
+}
